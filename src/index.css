@@ -6,7 +6,8 @@
   --surface-border: rgba(169, 139, 118, 0.2);
   --accent-color: #A98B76;
   --accent-hover: #BFA28C;
-  --text-primary: #8a6c58; /* slightly darker #A98B76 for readable text */
+  --text-primary: #8a6c58;
+  /* slightly darker #A98B76 for readable text */
   --text-secondary: #A98B76;
   --text-muted: #BFA28C;
   --danger-color: #BABF94;
@@ -26,7 +27,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
   color: var(--text-primary);
-  overflow: hidden; /* App is a fullscreen experience */
+  overflow: hidden;
+  /* App is a fullscreen experience */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -88,9 +90,20 @@ button {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.8; }
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }
 
 .recording-indicator {

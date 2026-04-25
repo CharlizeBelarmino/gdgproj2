@@ -125,15 +125,33 @@
   gap: 4px;
 }
 
-/* Fullscreen Camera */
-.full-screen {
+/* Framed Camera Layout */
+.camera-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 10;
 }
+
+.camera-frame {
+  width: 100%;
+  max-width: 1000px;
+  height: 80vh;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  background: black;
+  border: 1px solid var(--surface-border);
+}
+
 
 .bg-video, .main-video {
   width: 100%;

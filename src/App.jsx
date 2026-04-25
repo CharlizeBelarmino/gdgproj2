@@ -181,13 +181,15 @@ const App = () => {
   );
 
   const renderScanning = () => (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="scanning-container full-screen">
-      <video ref={videoRef} autoPlay playsInline muted className="bg-video" />
-      <div className="scanning-overlay">
-        <div className="scanner-line"></div>
-        <h2 className="glow-text">Scanning Scene...</h2>
-        <p>AI is detecting the number of subjects for pose suggestions.</p>
-        <div className="scanning-pulse"></div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="camera-wrapper">
+      <div className="camera-frame glass-panel">
+        <video ref={videoRef} autoPlay playsInline muted className="bg-video" />
+        <div className="scanning-overlay">
+          <div className="scanner-line"></div>
+          <h2 className="glow-text">Scanning Scene...</h2>
+          <p>AI is detecting the number of subjects for pose suggestions.</p>
+          <div className="scanning-pulse"></div>
+        </div>
       </div>
     </motion.div>
   );
@@ -196,7 +198,8 @@ const App = () => {
     const posesList = POSES[detectedMode] || [];
     
     return (
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="camera-container full-screen">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="camera-wrapper">
+        <div className="camera-frame glass-panel">
         <video ref={videoRef} autoPlay playsInline muted className="main-video" />
         <canvas ref={canvasRef} style={{ display: 'none' }} />
         
@@ -269,6 +272,7 @@ const App = () => {
             <p className="layout-hint glow-text">
               {layout === 'solo' ? '1 Photo' : 'Grid of 3'}
             </p>
+          </div>
           </div>
         </div>
       </motion.div>
