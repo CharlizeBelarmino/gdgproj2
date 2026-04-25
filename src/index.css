@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #F3E4C9;
+  --surface-color: rgba(255, 255, 255, 0.5);
+  --surface-border: rgba(169, 139, 118, 0.2);
+  --accent-color: #A98B76;
+  --accent-hover: #BFA28C;
+  --text-primary: #8a6c58; /* slightly darker #A98B76 for readable text */
+  --text-secondary: #A98B76;
+  --text-muted: #BFA28C;
+  --danger-color: #BABF94;
+  --brand-gradient: linear-gradient(135deg, #A98B76 0%, #BFA28C 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  overflow: hidden; /* App is a fullscreen experience */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.glass-panel {
+  background: var(--surface-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  border-radius: 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.pose-silhouette {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.recording-indicator {
+  animation: pulse 2s infinite ease-in-out;
+}
